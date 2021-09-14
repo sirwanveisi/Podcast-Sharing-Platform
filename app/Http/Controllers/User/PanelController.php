@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
+use function PHPUnit\Framework\directoryExists;
 
 class PanelController extends Controller
 {
@@ -92,6 +93,7 @@ class PanelController extends Controller
     {
         $total_size = 0;
         $count = 0;
+        if (file_exists($dir)):
         $dir_array = scandir($dir);
         foreach ($dir_array as $key => $filename) {
             if ($filename != ".." && $filename != ".") {
@@ -105,5 +107,8 @@ class PanelController extends Controller
             }
         }
         return $total_size;
+        else:
+            return 0;
+        endif;
     }
 }

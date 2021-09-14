@@ -28,7 +28,7 @@
                     </a>
                 </li>
                 <!-- #END# Full Screen Button -->
-                <li class="dropdown user_profile">
+                <li class="dropdown user_profile" style="cursor: pointer">
                     <div class="dropdown-toggle" data-toggle="dropdown">
                         <img src="{{ auth()->user()->image != '' ? auth()->user()->image : '/img/no-image.png' }}" width="35" height="35" alt="user">
                     </div>
@@ -182,66 +182,10 @@
             <li role="presentation">
                 <a href="#skins" data-toggle="tab" class="active">پوسته ها</a>
             </li>
-            <li role="presentation">
-                <a href="#settings" data-toggle="tab">تنظیمات</a>
-            </li>
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane in active in active stretchLeft" id="skins">
                 <div class="demo-skin">
-                    <div class="rightSetting">
-                        <p>تنظیمات عمومی</p>
-                        <ul class="setting-list list-unstyled m-t-20">
-                            <li>
-                                <div class="form-check">
-                                    <div class="form-check m-l-10">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" value="" checked> ذخیره تاریخچه
-                                            <span class="form-check-sign">
-                                                    <span class="check"></span>
-                                                </span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-check">
-                                    <div class="form-check m-l-10">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" value="" checked> نمایش وضعیت
-                                            <span class="form-check-sign">
-                                                    <span class="check"></span>
-                                                </span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-check">
-                                    <div class="form-check m-l-10">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" value="" checked> ثبت مسئله خودکار
-                                            <span class="form-check-sign">
-                                                    <span class="check"></span>
-                                                </span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-check">
-                                    <div class="form-check m-l-10">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" value="" checked> نمایش وضعیت به همه
-                                            <span class="form-check-sign">
-                                                    <span class="check"></span>
-                                                </span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
                     <div class="rightSetting">
                         <p>رنگ منو نوار کناری</p>
                         <button type="button" class="btn btn-sidebar-light btn-border-radius p-l-20 p-r-20">روشن</button>
@@ -278,97 +222,6 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="rightSetting">
-                        <p>فضای دیسک</p>
-                        <div class="sidebar-progress">
-                            <div class="progress m-t-20">
-                                <div class="progress-bar l-bg-cyan shadow-style width-per-10" role="progressbar"
-                                     aria-valuenow="10" aria-valuemin="10" aria-valuemax="100"></div>
-                            </div>
-                            <span class="progress-description">
-                                    <small>{{ $diskSize ?? '' }}</small>
-                                </span>
-                        </div>
-                    </div>
-                    <div class="rightSetting m-b-15">
-                        <p>پادکست های دانلود شده</p>
-                        <div class="sidebar-progress">
-                            <div class="progress m-t-20">
-                                <div class="progress-bar l-bg-orange shadow-style width-per-100" role="progressbar"
-                                     aria-valuenow="100" aria-valuemin="100" aria-valuemax="100"></div>
-                            </div>
-                            <span class="progress-description">
-                                    <small>{{ $downloads ?? '' }} بار</small>
-                                </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div role="tabpanel" class="tab-pane stretchRight" id="settings">
-                <div class="demo-settings">
-                    <p>تنظیمات عمومی</p>
-                    <ul class="setting-list">
-                        <li>
-                            <span>گزارش استفاده از پانل</span>
-                            <div class="switch">
-                                <label>
-                                    <input type="checkbox" checked>
-                                    <span class="lever switch-col-green"></span>
-                                </label>
-                            </div>
-                        </li>
-                        <li>
-                            <span>تغییر مسیر ایمیل</span>
-                            <div class="switch">
-                                <label>
-                                    <input type="checkbox">
-                                    <span class="lever switch-col-blue"></span>
-                                </label>
-                            </div>
-                        </li>
-                    </ul>
-                    <p>تنظیمات سیستم</p>
-                    <ul class="setting-list">
-                        <li>
-                            <span>اطلاعیه ها</span>
-                            <div class="switch">
-                                <label>
-                                    <input type="checkbox" checked>
-                                    <span class="lever switch-col-purple"></span>
-                                </label>
-                            </div>
-                        </li>
-                        <li>
-                            <span>به روز رسانی خودکار</span>
-                            <div class="switch">
-                                <label>
-                                    <input type="checkbox" checked>
-                                    <span class="lever switch-col-cyan"></span>
-                                </label>
-                            </div>
-                        </li>
-                    </ul>
-                    <p>تنظیمات حساب</p>
-                    <ul class="setting-list">
-                        <li>
-                            <span>آفلاین</span>
-                            <div class="switch">
-                                <label>
-                                    <input type="checkbox" checked>
-                                    <span class="lever switch-col-red"></span>
-                                </label>
-                            </div>
-                        </li>
-                        <li>
-                            <span>مجوز محل سکونت</span>
-                            <div class="switch">
-                                <label>
-                                    <input type="checkbox">
-                                    <span class="lever switch-col-lime"></span>
-                                </label>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>

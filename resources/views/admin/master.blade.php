@@ -17,7 +17,7 @@
     <link href="/admin/css/styles/all-themes.css" rel="stylesheet"/>
     <link href="/admin/js/bundles/multiselect/css/multi-select.css" rel="stylesheet">
     <link href="/admin/css/form.min.css" rel="stylesheet">
-
+    @yield('style')
 </head>
 
 <body class="light rtl">

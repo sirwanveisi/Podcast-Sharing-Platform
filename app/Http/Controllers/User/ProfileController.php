@@ -20,14 +20,15 @@ class ProfileController extends PanelController
     public function index()
     {
         $userID = auth()->user()->id;
-        $podcast = $users = DB::table('podcasts')->where('user', '=', $userID)->get();
-        $album = $users = DB::table('albums')->where('user', '=', $userID)->get();
+        $podcast = DB::table('podcasts')->where('user', '=', $userID)->get();
+        $album = DB::table('albums')->where('user', '=', $userID)->get();
+        $downloads = DB::table('podcasts')->where('user', '=', $userID)->sum('download_count');
         $PodcastCount = count($podcast);
         $AlbumCount = count($album);
         $folder_path = "uploads/podcast/".$userID;
         $folder_size = $this->folderSize($folder_path);
         $diskSize = $this->formatSize($folder_size);
-        return view('user.profile', compact('PodcastCount', 'AlbumCount', 'diskSize'));
+        return view('user.profile', compact('PodcastCount', 'AlbumCount', 'diskSize', 'downloads'));
     }
 
     /**

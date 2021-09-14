@@ -141,18 +141,22 @@ class DashboardController extends Controller
     {
         $total_size = 0;
         $count = 0;
-        $dir_array = scandir($dir);
-        foreach ($dir_array as $key => $filename) {
-            if ($filename != ".." && $filename != ".") {
-                if (is_dir($dir . "/" . $filename)) {
-                    $new_foldersize = $this->foldersize($dir . "/" . $filename);
-                    $total_size = $total_size + $new_foldersize;
-                } else if (is_file($dir . "/" . $filename)) {
-                    $total_size = $total_size + filesize($dir . "/" . $filename);
-                    $count++;
+        if (file_exists($dir)):
+            $dir_array = scandir($dir);
+            foreach ($dir_array as $key => $filename) {
+                if ($filename != ".." && $filename != ".") {
+                    if (is_dir($dir . "/" . $filename)) {
+                        $new_foldersize = $this->foldersize($dir . "/" . $filename);
+                        $total_size = $total_size + $new_foldersize;
+                    } else if (is_file($dir . "/" . $filename)) {
+                        $total_size = $total_size + filesize($dir . "/" . $filename);
+                        $count++;
+                    }
                 }
             }
-        }
-        return $total_size;
+            return $total_size;
+        else:
+            return 0;
+        endif;
     }
 }

@@ -18,8 +18,8 @@ class AdminProfileController extends DashboardController
     public function index()
     {
         $userID = auth()->user()->id;
-        $podcast = $users = DB::table('podcasts')->where('user', '=', $userID)->get();
-        $album = $users = DB::table('albums')->where('user', '=', $userID)->get();
+        $podcast = DB::table('podcasts')->where('user', '=', $userID)->get();
+        $album = DB::table('albums')->where('user', '=', $userID)->get();
         $PodcastCount = count($podcast);
         $AlbumCount = count($album);
         $folder_path = "uploads/podcast/".$userID;

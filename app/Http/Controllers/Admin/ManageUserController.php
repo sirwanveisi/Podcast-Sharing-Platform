@@ -45,7 +45,7 @@ class ManageUserController extends DashboardController
             'first-name' => ['required', 'string', 'max:191'],
             'last-name' => ['required', 'string', 'max:191'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'mobile' => ['numeric', 'digits:11', 'unique:users'],
+            'mobile' => ['nullable', 'numeric', 'digits:11', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role' => ['required'],
             'image' => 'image|mimes:jpeg,png,jpg|max:1000',
@@ -117,7 +117,7 @@ class ManageUserController extends DashboardController
             'first-name' => ['required', 'string', 'max:191'],
             'last-name' => ['required', 'string', 'max:191'],
             'email' => 'unique:users,email,'.$id,
-            'mobile' => ['numeric', 'digits:11', 'unique:users,mobile,'.$id],
+            'mobile' => ['nullable', 'numeric', 'digits:11', 'unique:users,mobile,'.$id],
             'role' => ['required'],
             'image' => 'image|mimes:jpeg,png,jpg|max:1000',
         ]);

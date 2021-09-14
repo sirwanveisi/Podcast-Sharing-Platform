@@ -87,7 +87,7 @@
                                     <td><img src="{{ $user->image != '' ? $user->image : '/img/no-image.png' }}" width="70" height="70"/></td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
-                                    <td>{{ $user->mobile }}</td>
+                                    <td>{{ $user->mobile ?? 'وارد نشده' }}</td>
                                     <td>{{ $user->role == 'admin' ? 'مدیر' : 'کاربر' }}</td>
                                     <td>{{ $user->status == '1' ? 'فعال' : 'غیرفعال' }}</td>
                                     <td>{{ Verta::instance($user->created_at)->format('%d %B %Y') }}</td>
