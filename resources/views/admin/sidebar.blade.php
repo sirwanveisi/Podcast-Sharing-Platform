@@ -81,92 +81,92 @@
                         </div>
                     </div>
                 </li>
-                <li class="active">
+                <li class="{{ request()->is('administrator') ? 'active' : '' }}">
                     <a href="{{ route('admin-dashboard') }}">
                         <i class="menu-icon ti-home"></i>
                         <span>داشبورد مدیریت</span>
                     </a>
                 </li>
-                <li>
+                <li class="{{ request()->is('administrator/podcasts*') ? 'active' : '' }}">
                     <a href="#" onClick="return false;" class="menu-toggle">
                         <i class="menu-icon  ti-microphone"></i>
                         <span>مدیریت پادکست ها</span>
                     </a>
                     <ul class="ml-menu">
-                        <li>
+                        <li class="{{ request()->is('administrator/podcasts') ? 'active' : '' }}">
                             <a href="{{ route('podcasts.index') }}">لیست کل پادکست ها</a>
                         </li>
-                        <li>
+                        <li class="{{ request()->is('administrator/podcasts/requests') ? 'active' : '' }}">
                             <a href="{{ route('podcasts.show', 'requests') }}">پادکست های منتظر تایید </a>
                         </li>
-                        <li>
+                        <li class="{{ request()->is('administrator/podcasts/create') ? 'active' : '' }}">
                             <a href="{{ route('podcasts.create') }}">افزودن پادکست جدید</a>
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="{{ request()->is('administrator/albums*') ? 'active' : '' }}">
                     <a href="#" onClick="return false;" class="menu-toggle">
                         <i class="menu-icon ti-layers-alt"></i>
                         <span>مدیریت آلبوم ها</span>
                     </a>
                     <ul class="ml-menu">
-                        <li>
+                        <li class="{{ request()->is('administrator/albums') ? 'active' : '' }}">
                             <a href="{{ route('albums.index') }}">لیست کل آلبوم ها</a>
                         </li>
-                        <li>
+                        <li class="{{ request()->is('administrator/albums/create') ? 'active' : '' }}">
                             <a href="{{ route('albums.create') }}">افزودن آلبوم جدید</a>
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="{{ request()->is('administrator/categories*') ? 'active' : '' }}">
                     <a href="#" onClick="return false;" class="menu-toggle">
                         <i class="menu-icon ti-menu-alt"></i>
                         <span>مدیریت دسته بندی ها</span>
                     </a>
                     <ul class="ml-menu">
-                        <li>
+                        <li class="{{ request()->is('administrator/categories') ? 'active' : '' }}">
                             <a href="{{ route('categories.index') }}">لیست کل دسته بندی ها</a>
                         </li>
-                        <li>
+                        <li class="{{ request()->is('administrator/categories/create') ? 'active' : '' }}">
                             <a href="{{ route('categories.create') }}">افزودن دسته بندی جدید</a>
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="{{ request()->is('administrator/users*') ? 'active' : '' }}">
                     <a href="#" onClick="return false;" class="menu-toggle">
                         <i class="menu-icon ti-user"></i>
                         <span>مدیریت کاربران</span>
                     </a>
                     <ul class="ml-menu">
-                        <li>
+                        <li class="{{ request()->is('administrator/users') ? 'active' : '' }}">
                             <a href="{{ route('users.index') }}">لیست کل کاربران</a>
                         </li>
-                        <li>
+                        <li class="{{ request()->is('administrator/users/create') ? 'active' : '' }}">
                             <a href="{{ route('users.create') }}">افزودن کاربر جدید</a>
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="{{ request()->is('administrator/comments*') ? 'active' : '' }}">
                     <a href="#" onClick="return false;" class="menu-toggle">
                         <i class="menu-icon  ti-comment"></i>
                         <span>مدیریت کامنت ها</span>
                     </a>
                     <ul class="ml-menu">
-                        <li>
+                        <li class="{{ request()->is('administrator/comments') ? 'active' : '' }}">
                             <a href="{{ route('comments.index') }}">لیست کل کامنت ها</a>
                         </li>
-                        <li>
+                        <li class="{{ request()->is('administrator/comments/requests') ? 'active' : '' }}">
                             <a href="{{ route('comments.show', 'requests') }}">کامنت های منتظر تایید </a>
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="{{ request()->is('administrator/profile-setting*') ? 'active' : '' }}">
                     <a href="#" onClick="return false;" class="menu-toggle">
                         <i class="menu-icon ti-settings"></i>
                         <span>مدیریت پروفایل</span>
                     </a>
                     <ul class="ml-menu">
-                        <li>
+                        <li class="{{ request()->is('administrator/profile-setting') ? 'active' : '' }}">
                             <a href="{{ route('profile-setting.index') }}">تنظیمات پروفایل</a>
                         </li>
                     </ul>
