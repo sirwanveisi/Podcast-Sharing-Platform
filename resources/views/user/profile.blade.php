@@ -1,25 +1,14 @@
 @extends('layouts.user')
+@section('title', 'تنظیمات پروفایل')
+@section('style')
+    <link href="/assets/js/bundles/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css" rel="stylesheet"/>
+    <link href="/assets/js/bundles/multiselect/css/multi-select.css" rel="stylesheet">
+    <link href="/assets/css/form.min.css" rel="stylesheet">
+@stop
 @section('content')
-    <div class="container-fluid">
-        <div class="block-header">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <ul class="breadcrumb breadcrumb-style ">
-                        <li class="breadcrumb-item">
-                            <h4 class="page-title">تنظیمات پروفایل</h4>
-                        </li>
-                        <li class="breadcrumb-item bcrumb-1">
-                            <a href="{{ route('dashboard') }}">
-                                <i class="fas fa-home"></i> خانه</a>
-                        </li>
-                        <li class="breadcrumb-item bcrumb-2">
-                            <a href="{{ route('profile.index') }}" onClick="return false;">پروفایل</a>
-                        </li>
-                        <li class="breadcrumb-item active">تنظیمات</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+@section('page-title', 'تنظیمات پروفایل')
+@section('page-name', 'پروفایل')
+@section('page-desc', 'تنظیمات پروفایل')
         <div class="row clearfix">
             <div class="col-lg-4 col-md-12">
                 <div class="card">
@@ -269,7 +258,6 @@
                 </div>
             </div>
         </div>
-    </div>
 @endsection
 @section('script')
     <script>

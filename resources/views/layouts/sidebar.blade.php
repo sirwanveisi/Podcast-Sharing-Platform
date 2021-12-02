@@ -9,7 +9,8 @@
                aria-expanded="false"></a>
             <a href="#" onClick="return false;" class="bars"></a>
             <a class="navbar-brand" href="{{ route('dashboard') }}">
-                <img src="/admin/images/logo.png" alt="" />
+                <img width="30" height="30" src="/assets/images/vijegan_logo.png" alt="academy logo"/>
+                <span class="logo-name">داشبورد کاربران</span>
             </a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -30,7 +31,9 @@
                 <!-- #END# Full Screen Button -->
                 <li class="dropdown user_profile" style="cursor: pointer">
                     <div class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="{{ auth()->user()->image != '' ? auth()->user()->image : '/img/no-image.png' }}" width="35" height="35" alt="user">
+                        <img height="35" width="35"
+                             src="{{ Auth::user()->picture != NULL ? Auth::user()->picture : '/assets/images/no-avatar.png' }}"
+                             alt="user">
                     </div>
                     <ul class="dropdown-menu pullDown">
                         <li class="body">

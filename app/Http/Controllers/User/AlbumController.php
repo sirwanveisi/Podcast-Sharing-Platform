@@ -19,8 +19,9 @@ class AlbumController extends PanelController
     public function index()
     {
         $user = auth()->user()->id;
-        $albums = Album::where('user', '=', $user)->orderBy('id', 'desc')->paginate(10);
-        return view('user.album.index', compact('albums'));
+        $data = Album::where('user', '=', $user)->orderBy('id', 'desc')->paginate(10);
+        $count = count($data);
+        return view('user.album.index', compact('data', 'count'));
     }
 
     /**
@@ -58,7 +59,8 @@ class AlbumController extends PanelController
             'cover' => $cover,
             'user' => $user,
         ]);
-        return redirect(route('album.index'));
+        return redirect(route('album.index'))->with('album-add-success','آلبوم موردنظر با موفقیت ایجاد شد.');
+
     }
 
     /**
@@ -112,7 +114,7 @@ class AlbumController extends PanelController
             'description' => $request['description'],
             'cover' => $cover,
         ]);
-        return redirect(route('album.index'));
+        return redirect(route('album.index'))->with('album-edit-success','آلبوم موردنظر با موفقیت ویرایش گردید.');
     }
 
     /**
@@ -124,6 +126,7 @@ class AlbumController extends PanelController
     public function destroy(Album $album)
     {
         $album->delete();
-        return redirect()->back();
+        return redirect(route('album.index'))->with('album-delete-success','آلبوم موردنظر با موفقیت حذف گردید.');
+
     }
 }

@@ -22,10 +22,11 @@ class PodcastController extends PanelController
         $folder_path = "uploads/podcast/" . $user;
         $folder_size = $this->folderSize($folder_path);
         $diskSize = $this->formatSize($folder_size);
-        $podcasts = Podcast::where('user', '=', $user)->latest()->paginate(15);
+        $data = Podcast::where('user', '=', $user)->latest()->paginate(15);
         $albums = Album::latest()->get();
+        $count = count($data);
         $diskSize = $diskSize;
-        return view('user.podcast.index', compact('podcasts','albums', 'diskSize'));
+        return view('user.podcast.index', compact('data', 'count', 'albums', 'diskSize'));
     }
 
     /**
@@ -36,10 +37,8 @@ class PodcastController extends PanelController
     public function create()
     {
         $user = auth()->user()->id;
-        $data = [
-            'albums' => DB::table('albums')->where('user', '=', $user)->latest()->get()
-        ];
-        return view('user.podcast.create', compact('data'));
+        $albums = DB::table('albums')->where('user', '=', $user)->latest()->get();
+        return view('user.podcast.create', compact('albums'));
     }
 
     /**
@@ -139,7 +138,8 @@ class PodcastController extends PanelController
             'cover' => $cover,
             'file' => $podcast,
         ]);
-        return redirect(route('podcast.index'));
+        return redirect(route('podcast.index'))->with('pod-edit-success','پادکست موردنظر با موفقیت ویرایش گردید.');
+
     }
 
     /**
@@ -151,6 +151,7 @@ class PodcastController extends PanelController
     public function destroy(Podcast $podcast)
     {
         $podcast->delete();
-        return redirect()->back();
+        return redirect(route('podcast.index'))->with('pod-delete-success', 'پادکست موردنظر از سیستم حذف گردید.');
+
     }
 }

@@ -1,20 +1,9 @@
 @extends('layouts.user')
+@section('title', 'داشبورد')
 @section('content')
-    <div class="container-fluid">
-        <div class="block-header">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <ul class="breadcrumb breadcrumb-style">
-                        <li class="breadcrumb-item 	bcrumb-1">
-                            <a href="{{ route('dashboard') }}">
-                                <i class="material-icons">home</i>
-                                خانه</a>
-                        </li>
-                        <li class="breadcrumb-item active">داشبورد</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+@section('page-title', 'داشبورد')
+@section('page-name', 'پنل کاربری')
+@section('page-desc', 'داشبورد')
         <!-- Widgets -->
         <div class="row">
             <div class="col-lg-3 col-sm-6">
@@ -61,5 +50,4 @@
                 </a>
             </div>
         </div>
-    </div>
 @endsection

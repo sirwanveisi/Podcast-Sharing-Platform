@@ -1,25 +1,15 @@
 @extends('layouts.user')
+@section('title', 'ویرایش پادکست')
+@section('style')
+    <link href="/assets/js/bundles/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css" rel="stylesheet"/>
+    <link href="/assets/js/bundles/multiselect/css/multi-select.css" rel="stylesheet">
+    <link href="/assets/css/form.min.css" rel="stylesheet">
+@stop
 @section('content')
-    <div class="container-fluid">
-        <div class="block-header">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <ul class="breadcrumb breadcrumb-style ">
-                        <li class="breadcrumb-item">
-                            <h4 class="page-title">ویرایش پادکست</h4>
-                        </li>
-                        <li class="breadcrumb-item bcrumb-1">
-                            <a href="../../index.html">
-                                <i class="fas fa-home"></i> خانه</a>
-                        </li>
-                        <li class="breadcrumb-item bcrumb-2">
-                            <a href="#" onClick="return false;">پادکست</a>
-                        </li>
-                        <li class="breadcrumb-item active">ویرایش پادکست</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+@section('page-title', 'ویرایش پادکست')
+@section('page-name', 'پادکست')
+@section('page-desc', 'ویرایش پادکست')
+@section('content')
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
@@ -113,6 +103,12 @@
                 </div>
             </div>
         </div>
-    </div>
-
 @endsection
+@section('script')
+    <script src="/assets/js/form.min.js"></script>
+    <script src="/assets/js/pages/forms/advanced-form-elements.js"></script>
+    <script src="/assets/js/bundles/multiselect/js/jquery.multi-select.js"></script>
+    <script src="/assets/js/bundles/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js"></script>
+    <script src="/assets/js/pages/forms/form-validation.js"></script>
+    <script src="/assets/js/admin-create.js"></script>
+@stop

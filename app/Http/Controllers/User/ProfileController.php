@@ -84,7 +84,7 @@ class ProfileController extends PanelController
     public function update(Request $request, $id)
     {
         if (isset($request->old_password)){
-            $user = User::findOrFail($id);
+            $user = User::findOrFail(auth()->user()->id);
             $request->validate([
                 'old_password' => 'required',
                 'new_password' => 'required|min:8|max:20|different:password',
