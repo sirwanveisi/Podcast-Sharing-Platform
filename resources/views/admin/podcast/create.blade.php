@@ -128,7 +128,7 @@
                                 </form>
                             @else
                                 <div class="alert alert-warning" style="color: #555 !important;">
-                                    <strong style="color: #555 !important;">خطا!</strong> جهت بارگزاری پادکست میبایست ابتدا یک آلبوم ایجاد نمایید، شما هنوز آلبوم ایجاد نکرده اید. <a href="{{ route('album.create') }}">ایجاد آلبوم</a>
+                                    <strong style="color: #555 !important;">خطا!</strong> جهت بارگزاری پادکست میبایست ابتدا یک آلبوم ایجاد نمایید، شما هنوز آلبوم ایجاد نکرده اید. <a href="{{ route('albums.create') }}">ایجاد آلبوم</a>
                                 </div>
                             @endif
                     </div>
