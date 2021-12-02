@@ -81,47 +81,47 @@
                         </div>
                     </div>
                 </li>
-                <li class="active">
+                <li class="{{ request()->is('dashboard') ? 'active' : '' }}">
                     <a href="{{ route('dashboard') }}">
                         <i class="menu-icon ti-home"></i>
                         <span>داشبورد</span>
                     </a>
                 </li>
-                <li>
+                <li class="{{ request()->is('dashboard/podcast*') ? 'active' : '' }}">
                     <a href="#" onClick="return false;" class="menu-toggle">
                         <i class="menu-icon  ti-microphone"></i>
                         <span>مدیریت پادکست ها</span>
                     </a>
                     <ul class="ml-menu">
-                        <li>
+                        <li class="{{ request()->is('dashboard/podcast/create') ? 'active' : '' }}">
                             <a href="{{ route('podcast.create') }}">افزودن پادکست جدید</a>
                         </li>
-                        <li>
+                        <li class="{{ request()->is('dashboard/podcast') ? 'active' : '' }}">
                             <a href="{{ route('podcast.index') }}">لیست پادکست ها</a>
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="{{ request()->is('dashboard/album*') ? 'active' : '' }}">
                     <a href="#" onClick="return false;" class="menu-toggle">
                         <i class="menu-icon ti-layers-alt"></i>
                         <span>مدیریت آلبوم ها</span>
                     </a>
                     <ul class="ml-menu">
-                        <li>
+                        <li class="{{ request()->is('dashboard/album/create') ? 'active' : '' }}">
                             <a href="{{ route('album.create') }}">افزودن آلبوم جدید</a>
                         </li>
-                        <li>
+                        <li class="{{ request()->is('dashboard/album') ? 'active' : '' }}">
                             <a href="{{ route('album.index') }}">لیست آلبوم ها</a>
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="{{ request()->is('dashboard/profile*') ? 'active' : '' }}">
                     <a href="#" onClick="return false;" class="menu-toggle">
                         <i class="menu-icon ti-settings"></i>
                         <span>مدیریت پروفایل</span>
                     </a>
                     <ul class="ml-menu">
-                        <li>
+                        <li class="{{ request()->is('dashboard/profile') ? 'active' : '' }}">
                             <a href="{{ route('profile.index') }}">تنظیمات پروفایل</a>
                         </li>
                     </ul>
