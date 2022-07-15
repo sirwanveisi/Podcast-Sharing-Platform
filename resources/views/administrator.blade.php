@@ -258,10 +258,10 @@
         </div>
         @endsection
         @section('script')
-            <script src="/admin/js/chart.min.js"></script>
-            <script src="/admin/js/bundles/echart/echarts.js"></script>
-            <script src="/admin/js/bundles/apexcharts/apexcharts.min.js"></script>
-            <script src="/admin/js/pages/index.js"></script>
+            <script src="/assets/js/chart.min.js"></script>
+            <script src="/assets/js/bundles/echart/echarts.js"></script>
+            <script src="/assets/js/bundles/apexcharts/apexcharts.min.js"></script>
+            <script src="/assets/js/pages/index.js"></script>
             <script type="text/javascript">
                 var user_grow = @json($userGrow_array);
                 var album_grow = @json($albumGrow_array);
