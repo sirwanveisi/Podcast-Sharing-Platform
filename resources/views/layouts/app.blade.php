@@ -20,20 +20,20 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Favicon-->
-    <link rel="icon" href="/admin/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
     <!-- Plugins Core Css -->
-    <link href="/admin/css/app.min.css" rel="stylesheet">
-    <link href="/admin/js/bundles/materialize-rtl/materialize-rtl.min.css" rel="stylesheet">
+    <link href="/assets/css/app.min.css" rel="stylesheet">
+    <link href="/assets/js/bundles/materialize-rtl/materialize-rtl.min.css" rel="stylesheet">
     <!-- Custom Css -->
-    <link href="/admin/css/style.css" rel="stylesheet" />
-    <link href="/admin/css/pages/extra_pages.css" rel="stylesheet" />
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <link href="/assets/css/pages/extra_pages.css" rel="stylesheet" />
 </head>
 <body>
             @yield('content')
 
     <!-- Plugins Js -->
-    <script src="/admin/js/app.min.js"></script>
+    <script src="/assets/js/app.min.js"></script>
     <!-- Extra page Js -->
-    <script src="/admin/js/pages/examples/pages.js"></script>
+    <script src="/assets/js/pages/examples/pages.js"></script>
 </body>
 </html>
